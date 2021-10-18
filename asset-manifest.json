@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Prism/static/css/main.da1657b3.chunk.css",
+    "main.js": "/Prism/static/js/main.5c43cf62.chunk.js",
+    "main.js.map": "/Prism/static/js/main.5c43cf62.chunk.js.map",
+    "runtime-main.js": "/Prism/static/js/runtime-main.7589865d.js",
+    "runtime-main.js.map": "/Prism/static/js/runtime-main.7589865d.js.map",
+    "static/js/2.704e73a5.chunk.js": "/Prism/static/js/2.704e73a5.chunk.js",
+    "static/js/2.704e73a5.chunk.js.map": "/Prism/static/js/2.704e73a5.chunk.js.map",
+    "static/js/3.2212d377.chunk.js": "/Prism/static/js/3.2212d377.chunk.js",
+    "static/js/3.2212d377.chunk.js.map": "/Prism/static/js/3.2212d377.chunk.js.map",
+    "index.html": "/Prism/index.html",
+    "static/css/main.da1657b3.chunk.css.map": "/Prism/static/css/main.da1657b3.chunk.css.map",
+    "static/js/2.704e73a5.chunk.js.LICENSE.txt": "/Prism/static/js/2.704e73a5.chunk.js.LICENSE.txt",
+    "static/media/babyswap-logo.348b127b.png": "/Prism/static/media/babyswap-logo.348b127b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7589865d.js",
+    "static/js/2.704e73a5.chunk.js",
+    "static/css/main.da1657b3.chunk.css",
+    "static/js/main.5c43cf62.chunk.js"
+  ]
+}
