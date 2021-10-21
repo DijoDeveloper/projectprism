@@ -26,8 +26,6 @@ const useStyles = makeStyles(theme => ({
         minHeight: '40vh',
         display: 'flex',
         borderRadius: '20px',
-        // WebkitScrollSnapType:'block',
-        // WebkitOverflowScrolling:'none',
         msOverflowStyle: 'none',
     },
     size: {

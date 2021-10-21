@@ -1,12 +1,11 @@
-import { Button, Modal, Typography } from '@mui/material';
-/* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from 'react';
-
-import Box from '@mui/material/Box';
+import { Button } from '@mui/material';
 import { FiSettings } from "react-icons/fi";
 import { IoMdArrowDown } from 'react-icons/io'
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ModalContainer from './ModalContainer';
+/* eslint-disable jsx-a11y/alt-text */
+import React from 'react';
+import SettingsModal from './SettingsModal'
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -17,17 +16,18 @@ const useStyles = makeStyles(theme => ({
         padding: '120px 16px 0px',
         alignItems: 'center',
         flex: '1 1 0%',
-        zIndex: 1
+        zIndex: 1,
     },
     main: {
         position: 'relative',
         maxWidth: '480px',
         width: '100%',
         background: 'rgb(25, 27, 31)',
-        boxShadow: 'rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px, rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px',
         borderRadius: '24px',
         marginTop: '1rem',
-        display: 'block'
+        display: 'block',
+        boxShadow:'#b3924f 0px 0px 4px, #b3924f 0px 0px 2px, #b3924f 0px 0px 2px, white 0px 0px 20px'
+
     },
     mainDiv1: {
         padding: '1rem 1.25rem 0.5rem',
@@ -261,9 +261,14 @@ const useStyles = makeStyles(theme => ({
 const Navbar = () => {
     const classes = useStyles();
 
-    const [openModal, setOpenModal] = React.useState(false);
-    const handleOpen = () => setOpenModal(true);
-    const handleClose = () => setOpenModal(false);
+    const [openModal, toggleModal] = React.useState(false);
+    const [showSettings, toggleSettings] = React.useState(false);
+
+    const handleOpen = () => toggleModal(true);
+    const handleClose = () => toggleModal(false);
+
+    const openSettings = () => toggleSettings(true);
+    const closeSettings = () => toggleSettings(false);
 
     return (
         <div className={classes.container}>
@@ -276,7 +281,7 @@ const Navbar = () => {
                             </div>
                             <div className={classes.swapHeadDiv} style={{ marginRight: '1rem' }}>
                                 <div className={classes.settingsView}>
-                                    <Button className={classes.settingsBtn}>
+                                    <Button onClick={openSettings} className={classes.settingsBtn}>
                                         <FiSettings size={18} />
                                     </Button>
                                 </div>
@@ -322,7 +327,6 @@ const Navbar = () => {
                                                 className={classes.input} />
                                         </div>
                                         <div className={classes.spSv2}>
-                                            {/* sc-33m4yg-5 sc-33m4yg-6 fucKMh iipmPE */}
                                             <div className={classes.spsV21}>
                                                 <span></span>
                                                 <div className={classes.spsv22}>
@@ -366,7 +370,6 @@ const Navbar = () => {
                                                 className={classes.input} />
                                         </div>
                                         <div className={classes.spSv2}>
-                                            {/* sc-33m4yg-5 sc-33m4yg-6 fucKMh iipmPE */}
                                             <div className={classes.spsV21}>
                                                 <span></span>
                                                 <div className={classes.spsv22}>
@@ -388,6 +391,10 @@ const Navbar = () => {
                 <ModalContainer
                     openModal={openModal}
                     handleClose={handleClose}
+                />
+                <SettingsModal
+                    openModal={showSettings}
+                    handleClose={closeSettings}
                 />
             </>
         </div>
