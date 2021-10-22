@@ -26,7 +26,8 @@ const useStyles = makeStyles(theme => ({
         borderRadius: '24px',
         marginTop: '1rem',
         display: 'block',
-        boxShadow:'#b3924f 0px 0px 4px, #b3924f 0px 0px 2px, #b3924f 0px 0px 2px, white 0px 0px 20px'
+        // boxShadow:'#b3924f 0px 0px 4px, #b3924f 0px 0px 2px, #b3924f 0px 0px 2px, white 0px 0px 20px'
+        boxShadow:'0px 0px 3px #b3924f, 0 0 20px #696969, 0 0 20px #666666, 0 0 40px #505050',
 
     },
     mainDiv1: {
