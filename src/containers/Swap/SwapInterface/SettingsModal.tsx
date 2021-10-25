@@ -11,6 +11,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 /* eslint-disable jsx-a11y/alt-text */
 import { makeStyles } from '@material-ui/core/styles';
+import { useState } from 'react';
 
 const useStyles = makeStyles(theme => ({
     modalStyle: {
@@ -187,7 +188,6 @@ const useStyles = makeStyles(theme => ({
 const ModalContainer = (props: any) => {
     const classes = useStyles();
     const handleClose = () => props.handleClose(false);
-
     return (
         <>
             <Modal
@@ -197,7 +197,7 @@ const ModalContainer = (props: any) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box id="modalStyle" className={classes.modalStyle}>
-                    <Accordion style={{ backgroundColor: 'rgb(25, 27, 31)', paddingTop: 10, paddingBottom: 10 }}>
+                    <Accordion defaultExpanded={true} style={{ backgroundColor: 'rgb(25, 27, 31)', paddingTop: 10, paddingBottom: 10 }}>
                         <AccordionSummary
                             expandIcon={<FiChevronDown size={24} style={{ marginTop: 2, color: 'silver', marginLeft: 4 }} />}
                             aria-controls="panel1a-content"
