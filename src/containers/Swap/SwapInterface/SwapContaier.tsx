@@ -1,5 +1,6 @@
+import { FiInfo, FiSettings } from "react-icons/fi";
+
 import { Button } from '@mui/material';
-import { FiSettings } from "react-icons/fi";
 import { IoMdArrowDown } from 'react-icons/io'
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ModalContainer from './ModalContainer';
@@ -13,7 +14,7 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        padding: '120px 16px 0px',
+        padding: '105px 16px 0px',
         alignItems: 'center',
         flex: '1 1 0%',
         zIndex: 1,
@@ -27,7 +28,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: '1rem',
         display: 'block',
         // boxShadow:'#b3924f 0px 0px 4px, #b3924f 0px 0px 2px, #b3924f 0px 0px 2px, white 0px 0px 20px'
-        boxShadow:'0px 0px 3px #b3924f, 0 0 20px #696969, 0 0 20px #666666, 0 0 40px #505050'
+        boxShadow: '0px 0px 3px #b3924f, 0 0 20px #696969, 0 0 20px #666666, 0 0 40px #505050'
 
     },
     mainDiv1: {
@@ -257,6 +258,57 @@ const useStyles = makeStyles(theme => ({
         background: '#3d3d3d',
         marginTop: "5px"
     },
+    spc1: {
+        height: '16px',
+        display: 'flex',
+        padding: '0px',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        width: 'fit-content',
+        boxSizing: 'border-box',
+        margin: '0px',
+        minWidth: '0px'
+    },
+    spc11: {
+        display: 'inline',
+        cursor: 'pointer',
+        fontSize: '13px',
+        color: 'silver',
+        marginLeft: '5px',
+    },
+    spc2: {
+        filter: 'none',
+        opacity: 1,
+        transition: 'opacity 0.2s ease-in-out 0s',
+    },
+    spc21: {
+        display: 'inline',
+        cursor: 'pointer',
+        fontSize: '13px',
+        color: 'silver',
+        marginLeft: '5px',
+    },
+    btmC: {
+        width: '100%',
+        display: 'flex',
+        padding: '3px',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        boxSizing: 'border-box',
+        margin: '0px',
+        minWidth: '0px',
+        paddingLeft:'5px'
+
+    },
+    btmc1: {
+        display: 'flex',
+        padding: '0px',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        width: 'fit-content',
+        position: 'relative'
+    }
+
 }));
 
 const Navbar = () => {
@@ -329,9 +381,14 @@ const Navbar = () => {
                                         </div>
                                         <div className={classes.spSv2}>
                                             <div className={classes.spsV21}>
-                                                <span></span>
-                                                <div className={classes.spsv22}>
-                                                    <div className={classes.spsv23}></div>
+                                                <div className={classes.spc1}>
+                                                    <div className={classes.spc11}>Balance: 0 ETH</div>
+                                                </div>
+                                                <div className={classes.spc2}>
+                                                    <div className={classes.spc21}>
+                                                        ~$
+                                                        <span style={{ color: 'silver', marginLeft: 5 }}>95,847.2</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -372,12 +429,26 @@ const Navbar = () => {
                                         </div>
                                         <div className={classes.spSv2}>
                                             <div className={classes.spsV21}>
-                                                <span></span>
-                                                <div className={classes.spsv22}>
-                                                    <div className={classes.spsv23}></div>
+                                                <div className={classes.spc1}>
+                                                    <div className={classes.spc11}>Balance: 0 ETH</div>
+                                                </div>
+                                                <div className={classes.spc2}>
+                                                    <div className={classes.spc21}>
+                                                        ~$
+                                                        <span style={{ color: 'silver', marginLeft: 5 }}>95,847.2</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={classes.btmC}>
+                                <div className={classes.btmc1}>Price</div>
+                                <div className={classes.btmc1}>
+                                    <div className={classes.spc21}>
+                                        1 DAI = 0.0002296 ETH ($1.00108) 
+                                        <span style={{ color: 'silver', marginLeft: 15 }}><FiInfo size={16} style={{position:'absolute',right:'-4'}} /></span>
                                     </div>
                                 </div>
                             </div>
