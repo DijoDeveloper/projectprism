@@ -7,6 +7,7 @@ import ModalContainer from './ModalContainer';
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import SettingsModal from './SettingsModal'
+import TokenDetailsModal from "./TokenDetailsModal";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -297,7 +298,7 @@ const useStyles = makeStyles(theme => ({
         boxSizing: 'border-box',
         margin: '0px',
         minWidth: '0px',
-        paddingLeft:'5px'
+        paddingLeft: '5px'
 
     },
     btmc1: {
@@ -311,17 +312,28 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-const Navbar = () => {
+interface IProps {
+    showTokenDet: boolean;
+    toggleshowTokenDetails: Function;
+}
+
+const Navbar = (props: IProps) => {
     const classes = useStyles();
 
     const [openModal, toggleModal] = React.useState(false);
     const [showSettings, toggleSettings] = React.useState(false);
+    const [showTokenDetails, toggleTokenDetails] = React.useState(false);
 
     const handleOpen = () => toggleModal(true);
     const handleClose = () => toggleModal(false);
 
     const openSettings = () => toggleSettings(true);
     const closeSettings = () => toggleSettings(false);
+
+    const openTokenDetails = () => toggleTokenDetails(true);
+    const closeTokenDetails = () => {
+        props.toggleshowTokenDetails(false)
+    }
 
     return (
         <div className={classes.container}>
@@ -447,8 +459,8 @@ const Navbar = () => {
                                 <div className={classes.btmc1}>Price</div>
                                 <div className={classes.btmc1}>
                                     <div className={classes.spc21}>
-                                        1 DAI = 0.0002296 ETH ($1.00108) 
-                                        <span style={{ color: 'silver', marginLeft: 15 }}><FiInfo size={16} style={{position:'absolute',right:'-4'}} /></span>
+                                        1 DAI = 0.0002296 ETH ($1.00108)
+                                        <span style={{ color: 'silver', marginLeft: 15 }}><FiInfo size={16} style={{ position: 'absolute', right: '-4' }} /></span>
                                     </div>
                                 </div>
                             </div>
@@ -467,6 +479,10 @@ const Navbar = () => {
                 <SettingsModal
                     openModal={showSettings}
                     handleClose={closeSettings}
+                />
+                <TokenDetailsModal
+                    openModal={props.showTokenDet}
+                    handleClose={closeTokenDetails}
                 />
             </>
         </div>
